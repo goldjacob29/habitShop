@@ -1,0 +1,28 @@
+<div ng-controller="IndexController">
+  <super-navbar>
+    <super-navbar-title>
+      Welcome to The Habit Shop!
+    </super-navbar-title>
+  </super-navbar>
+
+  <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
+  <div ng-hide="showSpinner">
+
+    <h4 ng-show="users.length == 0" class="assertive padding">
+      No users found. Create one?
+    </h4>
+
+    <super-modal-show location="user#new">
+      <button class="button button-full button-positive">
+        Sign Up
+      </button>
+    </super-modal-show>
+
+    <super-modal-show location="user#sign_in">
+      <button class="button button-full button-positive">
+        Sign In
+      </button>
+    </super-modal-show>
+
+  </div>
+</div>
